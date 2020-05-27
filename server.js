@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 //connecting to DB
 mongoose
   .connect(
-    'mongodb+srv://user:test1945@cluster0-306uy.mongodb.net/test?retryWrites=true&w=majority',
+    process.env.DB_URL,
     { useUnifiedTopology: true, useNewUrlParser: true }
   )
   .then(() => console.log('Successfully connected to the database'))
